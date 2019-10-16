@@ -8,10 +8,12 @@ SERVER_MOUNTER_URL = "http://ripper.theo.do/api/server-mounted"
 
 @app.route("/")
 def server_successfully_mounted():
-    token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwbGF5ZXJfaWQiOjY4LCJ1c2VybmFtZSI6ImNvbXBhY3RfY2hyaXN0YWJlbGxhIn0.Rkiq8A3T1ywW19WEM8dgVt6Ro2LoDj3bvhGRAL1LX0M"  # A remplacer
+    token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTcxMjM1NDYxLCJqdGkiOiJmYmI3OWY0MTNkNWQ0ZDQ1OTUzMzNjYjgzMDE4OGNiOCIsInVzZXJfaWQiOjE0NH0.5PzBmcLonuvMS9s9s7pjxte_zc3uf1pDFCL9LK3dZIc"  # A remplacer
     ip_address = "10.231.165.12"  # A remplacer
 
     return requests.post(
-        SERVER_MOUNTER_URL, data={"token": token, "ip_address": ip_address}
+        SERVER_MOUNTER_URL,
+        data={"ip_address": ip_address},
+        headers={"Authorization": "Bearer {}".format(token)},
     ).content.decode()
 
