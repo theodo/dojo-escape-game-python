@@ -5,7 +5,7 @@ USERNAME = "myUserName"
 ID = "123"
 
 # Indique le nom du fichier contenant les coordonnees de tous les informateurs
-FILE_NAME = "./addresses.json"
+FILE_NAME = "./urls.json"
 
 with open(FILE_NAME) as addresses_file:
     addresses = json.load(addresses_file)
