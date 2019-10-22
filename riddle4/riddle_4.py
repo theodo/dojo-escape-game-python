@@ -16,4 +16,3 @@ def server_successfully_mounted():
         data={"ip_address": ip_address},
         headers={"Authorization": "Bearer {}".format(token)},
     ).content.decode()
-
