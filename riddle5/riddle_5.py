@@ -14,7 +14,7 @@ culprit_information = requests.get(
 culprit_name = json.loads(culprit_information)["owner"]["display_name"]
 
 # Send culprit name to the police
-CULPRIT_URL = "http://ripper.theo.do/apiculprit"
+CULPRIT_URL = "http://ripper.theo.do/api/culprit"
 user_token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTcxODQ0Mjg1LCJqdGkiOiI4NjRmY2ZjZjkxZGU0N2JkOTM4MjEwYzI2YWYwNWM4OCIsInVzZXJfaWQiOjIzM30.irR-H4MsqpKg-koOaU1kctRsQQzv7cZ8TYFbt-T-09M"  # A remplacer
 
 police_answer = requests.post(
